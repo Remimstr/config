@@ -1,0 +1,48 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon-19px.png",
+         "38": "images/icon-38px.png"
+      },
+      "default_popup": "launcher.html",
+      "default_title": ""
+   },
+   "commands": {
+      "_execute_browser_action": {
+         "suggested_key": {
+            "chromeos": "Ctrl+M",
+            "linux": "Ctrl+M",
+            "mac": "MacCtrl+M",
+            "windows": "Ctrl+M"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "facebook.js", "jquery.js" ],
+      "matches": [ "https://www.facebook.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "js": [ "gmail.js" ],
+      "matches": [ "https://mail.google.com/mail/u/0/h/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Fast keyboard-shortcut driven speed-dial extension. Provides super-fast navigation to your favorite websites.",
+   "icons": {
+      "128": "images/icon-128px.png",
+      "16": "images/icon-16px.png",
+      "48": "images/icon-48px.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgIgnt4cBjgTz6zNHeRGyOa+G6idYlrAcXwu3uApqm2mwTkcY5u4faixehIPGxUJ7CA5bpD1k/sxhGBWWJhY8+qrGmBPXttyCw2bfOrSNfmmw4pjEQbPkRK2rPtAP2Roh2oN1yew/NlNFJfRPmouIhX0hdo9FIWe0PBJWcqXxCAQIDAQAB",
+   "manifest_version": 2,
+   "name": "SiteLauncher Speed Dial",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "contextMenus", "bookmarks", "http://*/*", "https://*/*", "chrome://favicon/*", "unlimitedStorage", "webRequest", "webRequestBlocking" ],
+   "short_name": "SiteLauncher",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "5.0.9"
+}

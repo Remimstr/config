@@ -1,0 +1,518 @@
+/* Copyright Done Smart Limited.
+ * SiteLauncher is a registered trademark of Done Smart Ltd.
+ * http://www.donesmart.com/sitelauncher */
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Grande", Verdana, arial, sans-serif;
+  height: 100%;
+}
+
+table#launcher_table
+{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  border-collapse: collapse;
+  font-size: 12px !important;
+}
+
+tr.launcher_header_row
+{
+  border-collapse: collapse;
+  height: 35px;  
+  cursor: default !important;  
+}
+
+table#launcher_table tr
+{
+  height: 35px;
+}
+
+table#launcher_table th
+{
+  color: #fff;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 0 25px;
+  cursor: default !important;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 35px;
+  line-height: 35px;
+  text-overflow: ellipsis;  
+  font-weight: bold;
+  background: rgba(0,0,0,.25);
+}
+
+.shortcut-td-cell
+{
+  text-align: left;
+  padding: 0 20px;
+  max-width: 175px;
+  border-collapse: collapse;
+  cursor: default !important;
+  color: #555 !important;
+  white-space: nowrap !important;
+  overflow: hidden;
+  height: 35px;
+  line-height: 35px;
+  text-overflow: ellipsis !important;  
+}
+
+.span_div
+{
+  display: inline-block;
+  white-space: nowrap !important;  
+  overflow: hidden; 
+  white-space: nowrap !important; 
+  max-width: 175px;
+}
+
+.span_div a
+{
+
+  text-overflow: ellipsis !important;  
+  white-space: nowrap !important;  
+  overflow: hidden;
+  white-space: nowrap !important;
+  max-width: 155px;  
+  padding-right: 30px;
+  float: left;
+}
+
+body[__theme="22"] .shortcut-td-cell:hover
+{
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(50, 32, 6, 0.1)),
+    color-stop(0.5, rgba(50, 32, 6, 0)),    
+    color-stop(1.0, rgba(50, 32, 6, 0.1))) !important;  
+}
+
+body[__theme="23"] .shortcut-td-cell:hover
+{
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(0, 0, 0, 0.04)),
+    color-stop(0.5, rgba(0, 0, 0, 0)),    
+    color-stop(1.0, rgba(0, 0, 0, 0.04))) !important;  
+}
+
+
+
+
+
+.shortcut-td-cell:hover
+{
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(255, 255, 255, 0.1)),
+    color-stop(0.5, rgba(255, 255, 255, 0)),    
+    color-stop(1.0, rgba(255, 255, 255, 0.1)));   
+}
+
+body[__theme="22"]  .shortcut-td-cell[__selected=true]
+{
+  outline: 1px solid rgba(50, 32, 6, 0.3);
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(50, 32, 6, 0.05)),
+    color-stop(0.5, rgba(50, 32, 6, 0)),    
+    color-stop(1.0, rgba(50, 32, 6, 0.05))) !important;  
+}
+
+body[__theme="23"]  .shortcut-td-cell[__selected=true]
+{
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(0, 0, 0, 0.04)),
+    color-stop(0.5, rgba(0, 0, 0, 0)),    
+    color-stop(1.0, rgba(0, 0, 0, 0.04))) !important;  
+}
+
+.shortcut-td-cell[__selected=true]
+{
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(255, 255, 255, 0.1)),
+    color-stop(0.5, rgba(255, 255, 255, 0)),    
+    color-stop(1.0, rgba(255, 255, 255, 0.1)));    
+}
+
+.site-letter
+{
+  color: white;
+  display: inline-block;
+  width: 1em;
+  padding: 0 !important;
+  margin: 0 !important;
+  float: right;
+  padding-left: 20px !important;
+  height: 35px;
+  line-height: 33px;  
+  display: inline-block;
+  text-align: center;
+}
+
+.site-icon-img
+{
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background-size: 16px auto;
+  display: inline-block;
+  margin: 9px 5px;  
+  vertical-align: top;
+}
+
+body[__theme="8"] th
+{
+  background: rgba(0,0,0,.06) !important;
+}
+
+body[__theme="7"] th
+{
+  background: rgba(0,0,0,.06) !important;
+}
+  
+
+body[__theme="6"] th
+{
+  background: rgba(0,0,0,.4) !important;
+}
+  
+body[__theme="20"] th
+{
+  background: rgba(0,0,0,.4) !important;
+}
+
+body[__theme="21"] th
+{
+  background: rgba(0,0,0,.1) !important;
+}
+
+
+body[__theme="22"] th
+{
+  background: rgba(0,0,0,.3) !important;
+}
+
+body[__theme="23"] th
+{
+  background: #fff !important; 
+  color: #333 !important;
+}
+
+  
+body[__theme="6"] td,
+body[__theme="6"] th
+{
+  color: #c9c9c9 !important;
+}
+
+body[__theme="8"] td,
+body[__theme="8"] th
+{
+  color: #fff !important;
+}
+
+body[__theme="20"] td,
+body[__theme="20"] th
+{
+  color: #fff !important;
+}
+
+body[__theme="21"].lightText td,
+body[__theme="21"].lightText th
+{
+  color: #fff !important;
+}
+
+body[__theme="21"].darkText td,
+body[__theme="21"].darkText th
+{
+  color: #000 !important;
+}
+
+body[__theme="21"].lightTextOverlay .shortcut-td-cell:hover,
+body[__theme="21"].lightText .shortcut-td-cell:hover
+{
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(255, 255, 255, 0.15)),
+    color-stop(0.5, rgba(255, 255, 255, 0.05)),    
+    color-stop(1.0, rgba(255, 255, 255, 0.15))) !important;  
+}
+
+body[__theme="21"].darkTextOverlay .shortcut-td-cell:hover,
+body[__theme="21"].darkText .shortcut-td-cell:hover
+{
+  background-image: -webkit-gradient(linear,
+    left top, left bottom,
+    color-stop(0.0, rgba(0, 0, 0, 0.1)),
+    color-stop(0.5, rgba(0, 0, 0, 0)),    
+    color-stop(1.0, rgba(0, 0, 0, 0.1))) !important;  
+}
+
+body[__theme="21"].lightTextOverlay td,
+body[__theme="21"].lightTextOverlay th
+{
+  color: #fff !important;
+  background: rgba(0,0,0,.5) !important;
+}
+
+body[__theme="21"].darkTextOverlay td,
+body[__theme="21"].darkTextOverlay th
+{
+  color: #000 !important;
+  background: rgba(255,255,255,.5) !important;
+}
+
+body[__theme="21"].lightTextOverlay .site-letter,
+body[__theme="21"].lightText .site-letter
+{
+  color: #fff !important;
+}
+
+body[__theme="21"].darkTextOverlay .site-letter,
+body[__theme="21"].darkText .site-letter
+{
+  color: #000 !important;
+}
+
+body[__theme="22"] td,
+body[__theme="22"] th
+{
+  color: #000 !important;
+  text-shadow: 0px 0px 4px #fff !important;
+}
+
+body[__theme="7"] td,
+body[__theme="7"] th
+{
+  color: #222 !important;
+}
+
+body[__theme="24"] td,
+body[__theme="24"] th
+{
+  color: #fff !important;
+}
+
+body[__theme="7"] .site-letter
+{
+  color: #444;
+}
+
+body[__theme="8"] .site-letter
+{
+  color: #fff;
+}
+
+body[__theme="20"]  .site-letter
+{
+  color: #fff;
+}
+
+body[__theme="22"]  .site-letter
+{
+  color: #3a2d00;
+}
+
+body[__theme="24"]  .site-letter
+{
+  color: #fff !important;
+}
+
+
+body[__theme="23"]  .site-letter
+{
+  color: #000 !important;
+}
+
+
+#launcher_container
+{
+  width: 100% !important; 
+  padding: 0 0 0 0 !important; 
+  border: 0 !important; 
+  margin: 0; 
+  overflow: hidden !important;
+  background-position: 0 -3px !important;   
+}
+
+body[__theme="6"] #launcher_container
+{
+ background: url(/images/theme-carbon.png) repeat-x !important;
+ background-position: 0 -3px !important;    
+}
+
+body[__theme="7"] #launcher_container
+{
+ background: url(/images/theme-brushed-metal-tiled.jpg) !important;
+ background-position: 0 -3px !important;    
+}
+
+body[__theme="8"] #launcher_container
+{
+			background-color: #c16;
+			background-image: -webkit-gradient(linear, 0 0, 100% 100%,
+									color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+									color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+									color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+			 						to(transparent));
+			background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+      -webkit-background-size: 50px 50px;
+}
+
+body[__theme="20"] #launcher_container
+{
+ background: url(/images/camo.png) repeat !important;
+}
+
+body[__theme="21"] #launcher_container
+{
+ /* background: url(/images/phoenix.png) center center !important; */
+ /* min-height: 300px; */
+ 
+}
+
+body[__theme="24"] #launcher_container
+{
+
+			background-color: #003399;
+      background-size: 50px;
+}
+
+body[__theme="22"] #launcher_container
+{
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #623704 0%, #B69433 5%, #B69433 25%, #FFFF99 45%, #FFFF99 50%, #FFFF99 55.00000000000001%, #B69433 75%, #8f671f 100%);
+}
+
+body[__theme="22"] #launcher_container2
+{
+border-left: 1px solid #825d25 !important;
+border-right: 1px solid #825d25 !important;
+}
+
+body[__theme="23"] #launcher_container2
+{
+border: 1px solid rgba(0, 0, 0, 0.05);
+background: -webkit-linear-gradient(top, #fff 0%, #fcfcfc 100%);
+}
+
+tr.noShortcutsMessage span
+{
+  margin-right: 1em;
+}
+
+tr.noShortcutsMessage #noShortcutsMsgPart1
+{
+
+}
+
+#noShortcutsMsgPart1
+{
+  font-size: 12px;
+}
+
+#noShortcutsMsgPart2
+{
+  clear: both;
+  float: left;
+  display: block;
+  margin-top: 10px;
+}
+
+#noShortcutsMsgPart2,
+#noShortcutsMsgPart4
+{
+  cursor: default;
+  font-size: 12px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #bbb;
+  cursor: default;
+  padding: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd)); 
+  display: block;
+  float: left;
+  margin-top: 10px;
+  text-shadow: none;
+}
+
+#noShortcutsMsgPart2
+{
+  border-right: 1px solid #000 !important;
+}
+
+#noShortcutsMsgPart5
+{
+  clear: both;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+#noShortcutsMsgPart2:active,
+#noShortcutsMsgPart4:active
+{
+  background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#fff)); 
+  text-shadow: none;
+}
+
+#noShortcutDiv
+{
+  min-width: 400px;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+  padding: 10px;
+}
+
+#pickModeDiv
+{
+  min-width: 400px;
+  overflow: hidden;
+  color: #fff;
+  padding: 10px;
+  -webkit-user-select: none;
+}
+
+#pickModeDiv div,
+#pickModeDiv a,
+#pickModeDiv p
+{
+  cursor: default !important;
+}
+
+#pickModeLogo
+{
+  padding: 0 50px;
+}
+
+#launcher_table
+{
+  -webkit-transition-property: margin-left;
+  -webkit-transition-duration: 70ms;
+  -webkit-transition-timing-function: linear;
+}

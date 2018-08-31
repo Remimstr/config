@@ -1,0 +1,2 @@
+var VaultToggle=function(){var t="vault.html",u=function(){return 1===parseInt(lpGetPref("useVault4_0",1))||LPContentScriptFeatures.block_3_0},e=function(t){lpPutUserPref("useVault4_0",t?1:0),lpPutGblPref("useVault4_0",t?1:0),lpWriteAllPrefs()},l=function(u){drawIconAtRotation(0),u?u.close():closecurrenttab(t),openvault()};return{getVaultPage:function(){return u()?t:"homelocal2.html"},useVault4_0:function(){return u()},toggleVault4_0:function(t){u()||(e(!0),l(t))},toggleVault3_0:function(t){u()&&(e(!1),l(t))},is4_0:u}}();
+//# sourceMappingURL=sourcemaps/vaultToggle.js.map

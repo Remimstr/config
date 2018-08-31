@@ -1,0 +1,21 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "Rx.min.js", "lib.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "default_title": "Bookmarks Bar Switcher"
+   },
+   "description": "Switch the bookmarks bar easily",
+   "icons": {
+      "48": "icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgFYX9qW8+VmPe3tL4C+kvsiyscrOxolSEPv2lX0q43075MYbYPKDomH3du+YB4/o950UKj6pWCFIn4D51XY7WiiIMg8YIyxrIpOTBBkymfENt464yNYW+tZPIsrx2+/gHZ2BlsrhHbWNSWMSaVwuDvnIQajejvIc28tqMzPzuiurvNadK08lw3oIXF1ItIyI99h7EIYAgnK2+DlVLO17ALAdw5EAN/4KX9D6UJ8c3VP5CDNztfcxOw9LEiUEWTn1ZJsXYdu3hjuTMULxGGUC4/zPb3hSui7If3T8EacUs21tatkjagScn+IAEYxHo6uW+iaOfxDnQCAOvX8HK9OuLQIDAQAB",
+   "manifest_version": 2,
+   "name": "Bookmarks Bar Switcher",
+   "permissions": [ "bookmarks", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1"
+}
