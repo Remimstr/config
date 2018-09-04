@@ -13,7 +13,7 @@ wireless wlp2s0 {
 }
 
 battery 0 {
-	format = "%status %remaining (%emptytime %consumption)"
+	format = "%status %percentage %remaining (%consumption)"
 	format_down = "No battery"
 	status_chr = ""
 	status_bat = ""
@@ -30,6 +30,6 @@ volume master {
 }
 
 tztime toronto {
-	format =" %a, %b %d |  %H:%M %Z"
+	format =" %a %b %d |  %H:%M %Z"
 	timezone = "America/Toronto"
 }
