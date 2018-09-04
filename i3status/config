@@ -1,0 +1,35 @@
+general {
+        output_format = "i3bar"
+}
+
+order += "wireless wlp2s0"
+order += "battery 0"
+order += "volume master"
+order += "tztime toronto"
+
+wireless wlp2s0 {
+        format_up = " %essid, %bitrate, %ip"
+        format_down = " down"
+}
+
+battery 0 {
+	format = "%status %remaining (%emptytime %consumption)"
+	format_down = "No battery"
+	status_chr = ""
+	status_bat = ""
+	status_full = ""
+	status_unk = ""
+	low_threshold = 30
+	threshold_type = "time"
+}
+
+volume master {
+	format = " %volume"
+	format_muted = ""
+	device = "pulse:1"
+}
+
+tztime toronto {
+	format =" %a, %b %d |  %H:%M %Z"
+	timezone = "America/Toronto"
+}
