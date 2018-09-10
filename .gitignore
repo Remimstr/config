@@ -1,2 +1,9 @@
 #Because it generates a lot of garbage in the config directory
 chromium
+pulse
+menus
+configstore
+dconf
+gconf
+gtk-3.0
+procps
