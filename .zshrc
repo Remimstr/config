@@ -102,3 +102,5 @@ powerline-daemon -q
 . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 source /usr/share/nvm/init-nvm.sh
 export PATH=/home/remi/.local/bin:$PATH
+
+eval $(thefuck --alias)

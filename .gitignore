@@ -1,9 +1,13 @@
 #Because it generates a lot of garbage in the config directory
+__pycache__
 chromium
-pulse
-menus
 configstore
 dconf
 gconf
-gtk-3.0
+gtk-*
+inkscape
+menus
+okularrc
 procps
+pulse
+QtProject.conf
