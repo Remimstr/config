@@ -1,0 +1,5 @@
+package bass
+package foreign-env
+package vcs
+theme chain
+theme default

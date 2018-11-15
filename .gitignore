@@ -1,13 +1,19 @@
 #Because it generates a lot of garbage in the config directory
 __pycache__
+Atom
 chromium
+calibre
+Code*
 configstore
 dconf
+enchant
 gconf
+google-chrome
 gtk-*
 inkscape
 menus
-okularrc
+mps-youtube
+okular*
 procps
 pulse
 QtProject.conf
