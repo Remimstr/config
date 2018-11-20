@@ -25,6 +25,8 @@ set history=1000
 " Use many many levels of undo
 set undolevels=1000
 
+set clipboard=unnamed
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ KEY SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -57,6 +59,12 @@ map <C-l> <C-w>l
 
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
+
+" Copy/Paste with the standard keys
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ EDITOR SETTINGS
@@ -98,6 +106,11 @@ set hlsearch
 
 " Show search matches as you type
 set incsearch
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" REMAP THE ESCAPE KEY
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap ii <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ FILE TYPE SETTINGS
