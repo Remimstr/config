@@ -6,8 +6,32 @@
 " effect
 set nocompatible
 
-" Pathogen is used to install and manage plugins
-execute pathogen#infect()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" PLUGIN SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" pangloss/vim-javascript
+" Enable syntax highlighting for flow
+let g:javascript_plugin_flow = 1
+
+" Enables code folding based on syntax file
+augroup javascript_folding
+	au!
+	au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+"" w0rp/ale
+" Change some of the ale defaults
+let g:ale_sign_error='●'
+let g:ale_sign_warning='.'
+let g:ale_lint_on_enter=0
+
+" Fix files on save
+let b:ale_fixers = ['prettier', 'eslint']
+let g:ale_fix_on_save=1
+
+" Enable completion where available
+let g:ale_completion_enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ BEHAVIOURAL SETTINGS
@@ -26,6 +50,9 @@ set history=1000
 set undolevels=1000
 
 set clipboard=unnamed
+
+" Set the fold level upon opening a file so that bits are unfolded
+set foldlevelstart=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ KEY SETTINGS
@@ -73,8 +100,8 @@ imap <C-v> <C-r><C-o>+
 " Don't wrap lines
 set nowrap
 
-" A tab is 4 spaces
-set tabstop=4	
+" A tab is 2 spaces
+set tabstop=2
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
