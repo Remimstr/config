@@ -7,18 +7,30 @@
 set nocompatible
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" VIM-PLUG
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin()
+
+Plug 'arcticicestudio/nord-vim'
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" pangloss/vim-javascript
-" Enable syntax highlighting for flow
-let g:javascript_plugin_flow = 1
+" arcticicestudio/nord-vim
+" Change the comment brightness in nord
+let g:nord_comment_brightness=10
 
-" Enables code folding based on syntax file
-augroup javascript_folding
-	au!
-	au FileType javascript setlocal foldmethod=syntax
-augroup END
+" Set the colorscheme
+colorscheme nord
 
 "" w0rp/ale
 " Change some of the ale defaults
@@ -31,7 +43,30 @@ let b:ale_fixers = ['prettier', 'eslint']
 let g:ale_fix_on_save=1
 
 " Enable completion where available
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
+
+"" scrooloose/nerdtree
+" Open automatically
+autocmd vimenter * NERDTree
+
+" Exit nerdtree if it's the last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+""" itchyny/lightline.vim
+" Set the colorscheme
+let g:lightline = {
+  \ 'colorscheme': 'nord',
+  \ }
+
+"" pangloss/vim-javascript
+" Enable syntax highlighting for flow
+let g:javascript_plugin_flow = 1
+
+" Enables code folding based on syntax file
+augroup javascript_folding
+	au!
+	au FileType javascript setlocal foldmethod=syntax
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ BEHAVIOURAL SETTINGS
@@ -52,7 +87,9 @@ set undolevels=1000
 set clipboard=unnamed
 
 " Set the fold level upon opening a file so that bits are unfolded
-set foldlevelstart=2
+set foldlevelstart=4
+
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ KEY SETTINGS
@@ -150,4 +187,9 @@ filetype plugin indent on
 """ MISC SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme torte
+set termguicolors
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" COLORSCHEME SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
