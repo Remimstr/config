@@ -16,6 +16,8 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+" Language-specific plugins
+Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
