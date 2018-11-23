@@ -15,6 +15,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -49,6 +50,9 @@ let g:ale_fix_on_save=1
 " Open automatically
 autocmd vimenter * NERDTree
 
+" Jumpt to the main window
+autocmd vimenter * wincmd p
+
 " Exit nerdtree if it's the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -57,6 +61,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:lightline = {
   \ 'colorscheme': 'nord',
   \ }
+
+""" Yggdroot/indentLine
+" Enable leading spaces
+let g:indentLine_leadingSpaceEnabled=1
 
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
@@ -153,7 +161,7 @@ set autoindent
 set copyindent
 
 " The number of spaces to use while autoindenting
-set shiftwidth=4
+set shiftwidth=2
 
 " Set show matching parenthesis
 set showmatch
