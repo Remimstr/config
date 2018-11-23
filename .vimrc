@@ -17,6 +17,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+" Language-specific plugins
+Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
