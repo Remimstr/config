@@ -1,4 +1,5 @@
 package bass
+package fish_logo
 package foreign-env
 package vcs
 theme chain
