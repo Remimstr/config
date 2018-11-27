@@ -53,6 +53,9 @@ xclock -geometry 50x50-1+1 &
 xterm -geometry 80x50+494+51 &
 xterm -geometry 80x20+494-0 &
 
+# Run compton as composite window manager
+compton --config ~/.config/compton.conf &
+
 # Run feh for getting my background images
 ~/.fehbg &
 
