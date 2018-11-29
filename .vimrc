@@ -224,4 +224,5 @@ set termguicolors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ COLORSCHEME SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+hi Normal guibg=NONE ctermbg=NONE
+highlight clear LineNr
