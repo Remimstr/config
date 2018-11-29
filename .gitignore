@@ -1,5 +1,6 @@
 #Because it generates a lot of garbage in the config directory
 __pycache__
+********.save*
 Atom
 chromium
 calibre
