@@ -21,6 +21,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'takac/vim-hardtime'
 " Language-specific plugins
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
@@ -71,6 +72,12 @@ let g:lightline = {
 """ Yggdroot/indentLine
 " Enable leading spaces
 let g:indentLine_leadingSpaceEnabled=1
+
+""" takac/vim-hardtime
+" Activate Hardtime
+let g:hardtime_default_on = 1
+" Set the maximum number of repetative key presses
+let g:hardtime_maxcount = 2
 
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow

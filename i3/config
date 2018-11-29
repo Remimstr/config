@@ -143,14 +143,14 @@ mode "resize" {
     # They resize the border in the direction you pressed, e.g.
     # when pressing left, the window is resized so that it has
     # more space on its left
-    bindsym h resize shrink left 10 px or 10 ppt
-    bindsym j resize shrink down 10 px or 10 ppt
-    bindsym k resize shrink up 10 px or 10 ppt
-    bindsym l resize shrink right 10 px or 10 ppt
-    bindsym Shift+H resize grow left 10 px or 10 ppt
-    bindsym Shift+J resize grow down 10 px or 10 ppt
-    bindsym Shift+K resize grow up 10 px or 10 ppt
-    bindsym Shift+L resize grow right 10 px or 10 ppt
+    bindsym Shift+H resize shrink left 10 px or 10 ppt
+    bindsym Shift+J resize shrink down 10 px or 10 ppt
+    bindsym Shift+K resize shrink up 10 px or 10 ppt
+    bindsym Shift+L resize shrink right 10 px or 10 ppt
+    bindsym h resize grow left 10 px or 10 ppt
+    bindsym j resize grow down 10 px or 10 ppt
+    bindsym k resize grow up 10 px or 10 ppt
+    bindsym l resize grow right 10 px or 10 ppt
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -217,6 +217,8 @@ bar {
 }
 
 # Custom configurations
+# Remove the border around windows
+for_window [class="^.*"] border pixel 3
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "alsa_output.pci-0000_00_1f.3.analog-stereo" +5% #increase sound volume
