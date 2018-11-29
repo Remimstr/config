@@ -78,6 +78,8 @@ let g:indentLine_leadingSpaceEnabled=1
 let g:hardtime_default_on = 1
 " Set the maximum number of repetative key presses
 let g:hardtime_maxcount = 2
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>", "<BS>"]
+
 
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
@@ -192,6 +194,15 @@ set hlsearch
 " Show search matches as you type
 set incsearch
 
+" Set hybrid line numbers for easier navigation in normal mode
+" Leave absolute numbers in insert mode
+set number relativenumber
+
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ REMAP THE ESCAPE KEY
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
