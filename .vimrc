@@ -6,6 +6,9 @@
 " effect
 set nocompatible
 
+" Map the leader key to something that makes more sense
+let mapleader=","
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ VIM-PLUG
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -22,6 +25,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'takac/vim-hardtime'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 " Language-specific plugins
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
@@ -73,6 +78,9 @@ let g:lightline = {
 " Enable leading spaces
 let g:indentLine_leadingSpaceEnabled=1
 
+" Having conceallevel set removes json quotes
+let g:indentLine_conceallevel = 0
+
 """ takac/vim-hardtime
 " Activate Hardtime
 let g:hardtime_default_on = 1
@@ -80,6 +88,9 @@ let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 2
 let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>", "<BS>"]
 
+""" benmills/vimux
+" Prompt for a command to run
+map <leader>vp :VimuxPromptCommand<CR>
 
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
@@ -130,9 +141,6 @@ map <right> <nop>
 
 " Change ; to :
 nnoremap ; :
-
-" Change the mapleader from \ to ,
-let mapleader=","
 
 " Jump to the next row in the editor on wrapped text
 nnoremap j gj
