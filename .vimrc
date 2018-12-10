@@ -28,6 +28,8 @@ Plug 'takac/vim-hardtime'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 " Language-specific plugins
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -233,4 +235,4 @@ set termguicolors
 """ COLORSCHEME SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Normal guibg=NONE ctermbg=NONE
-highlight clear LineNr
+highlight clear LineNr guifg=purple
