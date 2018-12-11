@@ -67,7 +67,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+Shift+h split h
+bindsym $mod+Shift+b split h
 
 # split in vertical orientation
 bindsym $mod+Shift+v split v
@@ -215,15 +215,15 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Run unclutter to get rid of the mouse when it's not in use
 exec_always unclutter &
 
-# Custom configurations
-# Remove the border around windows
-
 client.focused #d08770 #d08770 #d08770 #d08770 #d08770 
 client.focused_inactive #b48ead #b48ead #b48ead #b48ead #b48ead 
 client.unfocused #5e81ac #5e81ac #5e81ac #5e81ac #5e81ac
 client.urgent #bf616a #bf616a #bf616a #bf616a #bf616a
 
-for_window [class="^.*"] border pixel 8
+# Custom configurations
+# Remove the border around windows
+
+for_window [class="^.*"] border pixel 6
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "alsa_output.pci-0000_00_1f.3.analog-stereo" +5% #increase sound volume
