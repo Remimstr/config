@@ -1,0 +1,6 @@
+[Unit]
+Description=A service to monitor the battery level and send a notification when it gets too low
+
+[Service]
+Type=oneshot
+ExecStart=/home/remi/.config/scripts/battery-monitor.sh

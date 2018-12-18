@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodic checking of batter status
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+
+[Install]
+WantedBy=battery-monitor.service
