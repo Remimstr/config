@@ -24,15 +24,20 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 Plug 'takac/vim-hardtime'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'wincent/terminus'
+Plug 'rafaqz/ranger.vim'
 " Language-specific plugins
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'tmhedberg/matchit'
 
 call plug#end()
 
@@ -61,11 +66,8 @@ let g:ale_fix_on_save=1
 " let g:ale_completion_enabled = 1
 
 "" scrooloose/nerdtree
-" Open automatically
-autocmd vimenter * NERDTree
-
-" Jumpt to the main window
-autocmd vimenter * wincmd p
+" Toggle Nerdtree
+map <leader>nt :NERDTreeToggle<CR>
 
 " Exit nerdtree if it's the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -86,13 +88,28 @@ let g:indentLine_conceallevel = 0
 """ takac/vim-hardtime
 " Activate Hardtime
 let g:hardtime_default_on = 1
+
 " Set the maximum number of repetative key presses
-let g:hardtime_maxcount = 2
-let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>", "<BS>"]
+let g:hardtime_maxcount = 5
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+"]
+
+" Allow for different keys
+let g:hardtime_allow_different_key = 1
 
 """ benmills/vimux
 " Prompt for a command to run
 map <leader>vp :VimuxPromptCommand<CR>
+
+""" rafaqz/ranger.vim
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+map <leader>rd :RangerCD<cr>
+map <leader>rld :RangerLCD<cr>
 
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
@@ -126,6 +143,9 @@ set clipboard=unnamed
 set foldlevelstart=4
 
 set mouse=a
+
+" Change the working directory to the file being edited
+set autochdir
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ KEY SETTINGS
@@ -213,10 +233,6 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" REMAP THE ESCAPE KEY
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap ii <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ FILE TYPE SETTINGS
