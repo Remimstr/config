@@ -59,4 +59,7 @@ compton --config ~/.config/compton.conf &
 # Run feh for getting my background images
 ~/.fehbg &
 
+# Remap caps to escape
+setxkbmap -option caps:escape
+
 exec i3
