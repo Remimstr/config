@@ -247,5 +247,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Custom keybinds
 bindsym $mod+c exec "chromium"
+bindsym $mod+q exec "qutebrowser"
 bindsym --release $mod+Shift+s exec slock
 
