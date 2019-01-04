@@ -24,6 +24,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'takac/vim-hardtime'
 Plug 'christoomey/vim-tmux-navigator'
@@ -38,6 +39,8 @@ Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tmhedberg/matchit'
+Plug 'udalov/kotlin-vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -61,6 +64,10 @@ let g:ale_lint_on_enter=0
 " Fix files on save
 let b:ale_fixers = ['prettier', 'eslint']
 let g:ale_fix_on_save=1
+
+" Keybinds to jump around ale errors
+nmap <silent> <leader>an :ALENext<cr>
+nmap <silent> <leader>aN :ALEPrevious<cr>
 
 " Enable completion where available
 " let g:ale_completion_enabled = 1
@@ -160,9 +167,6 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-
-" Change ; to :
-nnoremap ; :
 
 " Jump to the next row in the editor on wrapped text
 nnoremap j gj
