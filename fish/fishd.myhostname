@@ -31,4 +31,4 @@ SET fish_pager_color_completion:\x1d
 SET fish_pager_color_description:B3A06D\x1eyellow
 SET fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SET fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SET fish_user_paths:/home/remi/\x2envm/versions/node/v8\x2e12\x2e0/bin\x1e/usr/local/bin
+SET fish_user_paths:/home/remi/\x2envm/versions/node/v11\x2e5\x2e0/bin\x1e/usr/local/bin\x1e/home/remi/\x2egem/ruby/2\x2e5\x2e0/bin
