@@ -4,9 +4,12 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-export MONITOR1=$(xrandr -q | grep " connected" | cut -d ' ' -f1 | head -n 1)
-export MONITOR2=$(xrandr -q | grep " connected" | cut -d ' ' -f1 | sed -n 2p)
-
-polybar bar1 -l info &
+if type "xrandr"; then
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		MONITOR=$m polybar --reload bar1 -l info &
+	done
+else
+ polybar bar1 -l info &
+fi
 
 echo "Bars launched..."

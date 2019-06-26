@@ -42,7 +42,7 @@ module-margin = "   "
 
 
 [bar/bar1]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 24
 ;offset-x = 1%
