@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" MISC 
+""" MISC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " This must be set first, because it changes other options as side
@@ -31,6 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'wincent/terminus'
 Plug 'rafaqz/ranger.vim'
+Plug 'lervag/vimtex'
 " Language-specific plugins
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -38,6 +39,7 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 Plug 'tmhedberg/matchit'
 Plug 'udalov/kotlin-vim'
 Plug 'mattn/emmet-vim'
@@ -62,7 +64,12 @@ let g:ale_sign_warning='.'
 let g:ale_lint_on_enter=0
 
 " Fix files on save
-let b:ale_fixers = ['prettier', 'eslint']
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'eslint'],
+  \ 'elm': ['elm-format', 'format'],
+  \ }
 let g:ale_fix_on_save=1
 
 " Keybinds to jump around ale errors
@@ -118,6 +125,10 @@ map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 map <leader>rd :RangerCD<cr>
 map <leader>rld :RangerLCD<cr>
 
+"" elmcast/elm-vim
+" Allow format on save
+let g:elm_format_autosave = 0
+
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
 let g:javascript_plugin_flow = 1
@@ -154,6 +165,11 @@ set mouse=a
 " Change the working directory to the file being edited
 set autochdir
 
+" Start a vim clientserver
+if empty(v:servername) && exists('*remote_startserver')
+  cal remote_startserver('VIM')
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ KEY SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,12 +177,6 @@ set autochdir
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" Stop using the arrow keys!
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 " Jump to the next row in the editor on wrapped text
 nnoremap j gj
