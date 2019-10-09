@@ -1,0 +1,6 @@
+#/bin/bash
+
+notify-send -u low "Executing post-switch"
+echo "$AUTORANDR_CURRENT_PROFILE" >> ~/.temp
+# feh --no-fehbg --bg-scale '/home/remi/Personal/Pictures/GOPR0650 1527224677849_high.JPG'
+# ~/.config/polybar/launch.sh
