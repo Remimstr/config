@@ -32,17 +32,21 @@ Plug 'benmills/vimux'
 Plug 'wincent/terminus'
 Plug 'rafaqz/ranger.vim'
 Plug 'lervag/vimtex'
+Plug 'junegunn/fzf.vim'
 " Language-specific plugins
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'elmcast/elm-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'tmhedberg/matchit'
 Plug 'udalov/kotlin-vim'
 Plug 'mattn/emmet-vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -129,6 +133,11 @@ map <leader>rld :RangerLCD<cr>
 " Allow format on save
 let g:elm_format_autosave = 0
 
+
+"" rust-lang/rust.vim
+" Allow format on save
+let g:rustfmt_autosave = 1
+
 "" pangloss/vim-javascript
 " Enable syntax highlighting for flow
 let g:javascript_plugin_flow = 1
@@ -138,6 +147,9 @@ augroup javascript_folding
 	au!
 	au FileType javascript setlocal foldmethod=syntax
 augroup END
+
+" kien/ctrlp.vim
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ BEHAVIOURAL SETTINGS
