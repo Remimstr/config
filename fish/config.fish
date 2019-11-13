@@ -1,2 +1,7 @@
 thefuck --alias | source
-set fish_user_paths /home/remi/.cargo/bin /home/remi/WebStorm-191.7479.14/bin /home/remi/bin /home/remi/.nvm/versions/node/v11.5.0/bin /usr/local/bin /home/remi/.gem/ruby/2.5.0/bin
+set fish_user_paths /home/remi/.cargo/bin /home/remi/WebStorm-191.7479.14/bin /home/remi/bin /home/remi/.nvm/versions/node/v11.5.0/bin /usr/local/bin /home/remi/.gem/ruby/2.5.0/bin /home/remi/Personal/devtools/flutter/bin
+
+if status is-interactive
+and not set -q TMUX
+  exec tmux
+end
