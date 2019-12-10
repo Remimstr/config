@@ -33,6 +33,7 @@ Plug 'wincent/terminus'
 Plug 'rafaqz/ranger.vim'
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf.vim'
+Plug 'ajh17/VimCompletesMe'
 " Language-specific plugins
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -47,6 +48,7 @@ Plug 'tmhedberg/matchit'
 Plug 'udalov/kotlin-vim'
 Plug 'mattn/emmet-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -54,9 +56,14 @@ call plug#end()
 """ PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" arcticicestudio/nord-vim
-" Change the comment brightness in nord
-let g:nord_comment_brightness=10
+" Make comments and other things readable
+augroup nord-overrides
+  autocmd!
+  autocmd ColorScheme nord highlight Folded cterm=italic,bold ctermbg=0 ctermfg=12 guibg=#3B4252 guifg=#81A1C1
+  autocmd ColorScheme nord highlight Comment ctermfg=12 guifg=#81A1C1
+  autocmd ColorScheme nord highlight Search ctermbg=3 ctermfg=0 guibg=#EBCB8B guifg=#3B4252
+  autocmd ColorScheme nord highlight IncSearch ctermbg=8 guibg=#4C566A
+augroup END
 
 " Set the colorscheme
 colorscheme nord
@@ -72,6 +79,7 @@ let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'typescript': ['prettier', 'eslint'],
+	\ 'vue': ['prettier', 'eslint'],
   \ 'elm': ['elm-format', 'format'],
   \ }
 let g:ale_fix_on_save=1
@@ -270,8 +278,6 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ MISC SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set termguicolors
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ COLORSCHEME SETTINGS
