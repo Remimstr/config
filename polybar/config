@@ -21,20 +21,21 @@
 ;nord 10
 background = #5E81AC
 background-alt = #444
-background-focused = #D08770 
+background-focused = #D08770
 background-visible = #B48ead
 background-battery-nord = #81A1C1
-background-wlan-nord = #BF616A 
-background-cpu-nord = #D08770 
+background-wlan-nord = #BF616A
+background-cpu-nord = #D08770
 background-memory-nord = #B48EAD
-background-volume-nord = #EBCB8B 
+background-volume-nord = #EBCB8B
 ;foreground = ${xrdb:color7:#222}
 ;nord 6
-foreground = #ECEFF4 
+foreground = #ECEFF4
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+spotify = "#8aa573"
 
 [hacks]
 ;Allow padding of modules while keeping the formatted background colour we've set
@@ -71,7 +72,7 @@ font-2 = "Roboto Mono Bold for Powerline:size=10;1"
 font-3 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-right = volume battery memory cpu wlan date
+modules-right = spotify volume battery memory cpu wlan date
 
 tray-position = right
 tray-padding = 2
@@ -153,7 +154,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index% - %output%
 label-focused-background = ${colors.background-focused}
 label-focused-underline = ${colors.background-focused}
-label-focused-padding = 2 
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index% - %output%
@@ -161,7 +162,7 @@ label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index% - %output%
-label-visible-background = ${colors.background-visible} 
+label-visible-background = ${colors.background-visible}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -241,7 +242,7 @@ format-disconnected-background=${colors.background-wlan-nord}
 format-connected-suffix = ${hacks.module-margin}
 format-disconnected-prefix = ${hacks.module-margin}
 format-disconnected-suffix = ${hacks.module-margin}
-connected-active-font=2 
+connected-active-font=2
 disconnected-active-font=2
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -272,8 +273,8 @@ interval = 5
 date =
 date-alt = " %Y-%m-%d"
 
-time = %H:%M 
-time-alt = %H:%M:%S  
+time = %H:%M
+time-alt = %H:%M:%S
 ;have to manually insert module margins here
 format-prefix = "    "
 format-suffix = ${hacks.module-margin}
@@ -300,7 +301,7 @@ format-volume-prefix-background = ${colors.background-volume-nord}
 format-volume-suffix-background = ${colors.background-volume-nord}
 format-muted-suffix-background = ${colors.background-volume-nord}
 format-muted-prefix-background = ${colors.background-volume-nord}
-label-muted =   %percentage% 
+label-muted =   %percentage%
 format-muted = <label-muted>
 [module/battery]
 type = internal/battery
@@ -372,6 +373,17 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-padding = 2
+format-prefix = " "
+format = <label>
+format-underline = #1db954
+format-background = ${colors.spotify}
+exec = python /usr/share/polybar/scripts/spotify_status.py -f '{play_pause}  {song} - {artist} / {album}'
+label-mode-background = ${colors.secondary}
 
 [settings]
 screenchange-reload = true
