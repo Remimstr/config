@@ -4,6 +4,8 @@ general {
 
 order += "wireless wlp2s0"
 order += "battery 0"
+order += "memory"
+order += "cpu_usage"
 order += "volume master"
 order += "tztime toronto"
 
@@ -21,6 +23,19 @@ battery 0 {
 	status_unk = ""
 	low_threshold = 30
 	threshold_type = "time"
+}
+
+memory {
+	format = "%used"
+	threshold_degraded = "10%"
+	format_degraded = "MEMORY: %free"
+}
+
+cpu_usage {
+  format = "%usage"
+  format_above_threshold = "CPU at max: %usage"
+  degraded_threshold = 75
+  format_above_degraded_threshold = "High CPU usage: %usage"
 }
 
 volume master {
